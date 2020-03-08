@@ -1,6 +1,5 @@
 import pytest
 from fixture.application import Application
-from config import api_config
 
 fixture = None
 
