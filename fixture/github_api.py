@@ -16,11 +16,13 @@ class Github(Api):
     def get(self, relative_url='', params=None):
         return get(self.base_url+relative_url, params)
 
-    def get_user(self, github_user):
+    def get_user(self, github_user=None):
         github_user = self.username if not github_user else github_user
-        self.get(relative_url=f'users/{github_user}')
+        return self.get(relative_url=f'/users/{github_user}')
 
-    def api_healthcheck(self):
-        if self.get().status_code == 200:
-            return True
-        return None
+    def get_user_repos(self, github_user=None):
+        github_user = self.username if not github_user else github_user
+        return self.get(relative_url=f'/users/{github_user}/repos')
+
+    def get_api_status(self):
+        return self.get().status_code
