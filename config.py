@@ -1,5 +1,7 @@
 api_config = {
-      "baseurl": "https://api.github.com",
-      "username": "octocat",
-      "password": "octocat"
+      'github': {
+            'base_url': 'https://api.github.com',
+            'username': 'octocat',
+            'password': 'octocat'
+      }
 }

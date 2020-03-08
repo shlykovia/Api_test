@@ -9,5 +9,5 @@ fixture = None
 def app(request):
     global fixture
     if fixture is None:
-        fixture = Application(base_url=api_config["baseurl"])
+        fixture = Application()
     return fixture
